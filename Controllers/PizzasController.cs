@@ -27,7 +27,8 @@ namespace PizzApp.Controllers
         }
 
         // GET: Pizzas/SearchForm
-        public async Task<IActionResult> SearchForm()
+        //public async Task<IActionResult> SearchForm()
+        public IActionResult SearchForm()
         {
             return View();
         }

@@ -20,3 +20,61 @@ body {
 img {
     width: 314px;
 }
+
+input {
+    margin-bottom: 10px;
+}
+
+.table table {
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+
+
+
+
+
+.table td {
+    border: 1px solid #858585;
+    padding: 0.5rem 0.5rem;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table tr:nth-child(odd) {
+    background-color: #f4f4f4;
+}
+
+.table tr:hover {
+    background-color: #b8b8b8;
+    
+}
+
+
+
+.table tr:hover > .item-name {
+        font-weight: 700;
+    }
+
+.table th {
+    background: rgb(200, 16, 46);
+    color: white;
+    border: 1px solid black;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table .btn {
+    margin: 5px;
+    
+}
+
+.navbar img {
+    min-width: 10px;
+    max-width: 50px;
+}
+
+.item-name {
+    width: 15%;
+}
