@@ -32,6 +32,7 @@ namespace PizzApp.Controllers
             return View();
         }
 
+
         // POST: Pizzas/SearchResults
         public async Task<IActionResult> SearchResults(string PhraseToSearch)
         {
