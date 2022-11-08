@@ -34,6 +34,14 @@ namespace PizzApp.Models
             }
         //}
 
+        public Pizza(string name, string description, decimal price, string src )
+        {
+            Name = name;
+            Description = description;  
+            Price = price;  
+            Source = src;
+        }
+
         public Pizza()
         {
 

@@ -21,13 +21,14 @@ img {
     width: 314px;
 }
 
-input {
+input, button, a {
     margin-bottom: 10px;
 }
 
-.table table {
+table {
     border-collapse: collapse;
     width: 100%;
+    margin-top: 10px;
     
 }
 
@@ -85,4 +86,10 @@ input {
 
 h1 {
     text-align: center;
+}
+
+.git {
+    text-align: right;
+    text-decoration: none;
+    
 }

@@ -6,9 +6,41 @@
 
 <h1>List of Pizza</h1>
 
-<p>
-    <a asp-action="Create" class="btn btn-success">Create New</a>
-</p>
+
+<a asp-action="Create" class="btn btn-success">Create New</a>
+
+<button 
+    type="button" 
+    value="Add Pre Def Item"
+    class="btn btn-success"
+        onclick="location.href='@Url.Action("AddPreDefItem", "Pizzas", new Pizza("Margherita", "Mozzarella cheese, herb tomato sauce", Convert.ToDecimal(50.88), "margherita.jpg"))'">
+    Add Margherita
+</button>
+<button type="button"
+        value="Add Pre Def Item"
+        class="btn btn-success"
+        onclick="location.href='@Url.Action("AddPreDefItem", "Pizzas", new Pizza("Pepperoni", "Pepperoni sausage, mozzarella cheese, herb tomato sauce", Convert.ToDecimal(50.77), "pepperoni.jpg"))'">
+    Add Pepperoni
+</button>
+<button type="button"
+        value="DeleteAll"
+        class="btn btn-danger"
+        onclick="location.href='@Url.Action("DeleteAll", "Pizzas")'">
+    Delete All
+</button>
+<button type="button"
+        value="OrderByPrice"
+        class="btn btn-info"
+        onclick="location.href='@Url.Action("OrderByPrice", "Pizzas")'">
+    Order By Price
+</button>
+<button type="button"
+        value="OrderByName"
+        class="btn btn-info"
+        onclick="location.href='@Url.Action("OrderByName", "Pizzas")'">
+    Order By Name
+</button>
+
 <table class="table">
     <thead>
         <tr>

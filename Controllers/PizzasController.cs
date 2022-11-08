@@ -36,11 +36,16 @@ namespace PizzApp.Controllers
 
         // POST: Pizzas/SearchResults
         public async Task<IActionResult> SearchResults(string PhraseToSearch)
-        {
-            return View("Index", await _context.Pizza.Where(
-                pizza => pizza.Description.Contains(PhraseToSearch)
-                ).ToListAsync());
+        {     
+
+                    return View("Index", await _context.Pizza.Where(
+                    pizza => pizza.Description.Contains(PhraseToSearch) || pizza.Name.Contains(PhraseToSearch) || Convert.ToString(pizza.ID).Contains(PhraseToSearch)
+                    ).ToListAsync());
+          
+            
         }
+
+
 
         // GET: Pizzas/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -180,5 +185,56 @@ namespace PizzApp.Controllers
         {
           return _context.Pizza.Any(e => e.ID == id);
         }
+
+        //public void AddPreDefItem()
+        //{
+        //    var preDefPizza = new Pizza("Margherita", "Mozzarella cheese, herb tomato sauce", 50, "pizza.jpg");
+        //    _context.Pizza.Add(preDefPizza);
+        //    _context.SaveChanges();
+        //}
+
+
+        [Authorize]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddPreDefItem(Pizza newPizza)
+        {
+            var preDefPizza = newPizza;
+            _context.Pizza.Add(preDefPizza);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+
+        // GET: Pizzas/DeleteAll
+        [Authorize]
+        public IActionResult DeleteAll()
+        {
+
+            return View();
+        }
+
+        // POST: Pizzas/DeleteAll
+        [Authorize]
+        [HttpPost, ActionName("DeleteAll")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteAllConfirmed()
+        {
+            await _context.Database.ExecuteSqlRawAsync("TRUNCATE TABLE dbo.Pizza");
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> OrderByPrice()
+        {
+            return View("Index", await _context.Pizza.OrderBy(pizza => pizza.Price).ToListAsync());
+        }
+
+        public async Task<IActionResult> OrderByName()
+        {
+            return View("Index", await _context.Pizza.OrderBy(pizza => pizza.Name).ToListAsync());
+        }
+
+
     }
 }
