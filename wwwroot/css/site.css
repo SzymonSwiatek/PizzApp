@@ -93,3 +93,11 @@ h1 {
     text-decoration: none;
     
 }
+
+.welcome p:hover {
+    font-weight: 700;
+}
+
+.nav-link:hover {
+    font-weight:500;
+}

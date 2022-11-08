@@ -22,12 +22,7 @@
         onclick="location.href='@Url.Action("AddPreDefItem", "Pizzas", new Pizza("Pepperoni", "Pepperoni sausage, mozzarella cheese, herb tomato sauce", Convert.ToDecimal(50.77), "pepperoni.jpg"))'">
     Add Pepperoni
 </button>
-<button type="button"
-        value="DeleteAll"
-        class="btn btn-danger"
-        onclick="location.href='@Url.Action("DeleteAll", "Pizzas")'">
-    Delete All
-</button>
+
 <button type="button"
         value="OrderByPrice"
         class="btn btn-info"
@@ -39,6 +34,12 @@
         class="btn btn-info"
         onclick="location.href='@Url.Action("OrderByName", "Pizzas")'">
     Order By Name
+</button>
+<button type="button"
+        value="DeleteAll"
+        class="btn btn-danger"
+        onclick="location.href='@Url.Action("DeleteAll", "Pizzas")'">
+    Delete All
 </button>
 
 <table class="table">
